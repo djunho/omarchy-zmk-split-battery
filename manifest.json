@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.djunho.zmk-split-battery",
+  "name": "ZMK split battery",
+  "version": "1.0.0",
+  "author": "djunho",
+  "license": "GPL-3.0",
+  "description": "Battery level of each half of a ZMK split keyboard, found automatically over Bluetooth",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "ZMK split battery",
+    "description": "Battery level of each half of a ZMK split keyboard, found automatically over Bluetooth",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "centralSide": "left"
+    },
+    "schema": [
+      {
+        "key": "centralSide",
+        "type": "enum",
+        "label": "Central half",
+        "options": [
+          "left",
+          "right"
+        ],
+        "defaultValue": "left",
+        "description": "Which physical half runs the ZMK central role (the half that pairs with the computer). Stock Corne firmware uses the left half."
+      }
+    ]
+  }
+}
